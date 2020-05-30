@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+body {
+  background-image: url('assets/topography.png');
+  font-family: "Courier New", Courier, monospace;
+
+}
+.main {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#logo {
+  float: left;
+  padding-left: 11%;
+  padding-top: 6px;
+}
+h1 {
+  font-family: 'Muli', sans-serif;
+  text-align: center;
+  font-size: 40px;
+}
+.about_me h1{
+  font-size: 60px;
+  text-align: left;
+}
+.about_me h2{
+  color: #ff0099;
+  font-size:40px;
+}
+.defs h3{
+  font-weight: bold;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: #ff0099;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.main {
+  
+}

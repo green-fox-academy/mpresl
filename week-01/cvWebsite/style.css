@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+
+strong {
+  font-weight: 2000 !important;
+}
+.section ul {
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+.header {
+  margin: 0;
+  padding-top: 0;
+  padding-left: 20%;
+  padding-right: 20%;
+  background-image: url(assets/anakin.png);
+  background-size: cover;
+}
+.header h2 {
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 30%;
+  padding-bottom: 0;
+  margin: 0;
+  margin: auto;
+}
+.header h1 {
+  color: black;
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0%;
+  padding-bottom: 5%;
+}
+body {
+  font-family: 'DM Mono', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.quote {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding-bottom: 5%;
+  color: white;
+  background-color: rgb(68, 68, 68);
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.quote h1 {
+  padding-top: 0%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.section {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+hr {
+  border-width: 4px;
+}
