@@ -7,7 +7,6 @@ public class SubInt {
         System.out.println(subInt(9, new int[] {1, 11, 34, 52, 61}));
     }
     public static String subInt(int num, int[] array){
-        int[] newArray = new int[0];
         ArrayList<Integer> newList = new ArrayList<Integer>();
 
 
