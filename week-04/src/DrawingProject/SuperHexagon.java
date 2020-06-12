@@ -1,6 +1,10 @@
+//This is a work in progress... INCOMPLETE!!!
+
 package DrawingProject;
 
 import javax.swing.*;
+
+
 import java.awt.*;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
