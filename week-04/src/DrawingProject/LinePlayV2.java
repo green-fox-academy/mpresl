@@ -1,41 +1,30 @@
-//Walkthru solution with Amy
-
 package DrawingProject;
 
 import javax.swing.*;
-
-
 import java.awt.*;
+import java.util.HashMap;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-public class SuperHexagon {
+public class LinePlayV2 {
     public static void mainDraw(Graphics graphics) {
-        int columns = 7;
-        int size = 20;
-        double edgeLength = (2 * Math.sqrt(size));
-        int edgeLen = (int) Math.round(edgeLength);
+        int lines = 15;
+        int xStep = WIDTH/lines;
+        int yStep = HEIGHT/lines;
 
-        for (int i = 0; i < columns; i++) {
-            int x = size + i * (size + size / 2);
-            int rows = columns - Math.abs(i - columns/2);
-            for (int j = 0; j < rows; j++) {
-                int y = HEIGHT/2 - rows*edgeLen + j*size;
-                drawHexagon(x,y,size,graphics);
-            }
+        for (int i = 0; i <= lines; i++) {
+            int xEnd = i * xStep;
+            int yEnd = i * yStep;
+
+            graphics.setColor(Color.GREEN);
+            graphics.drawLine(0, yEnd, xEnd, HEIGHT);
+
+            graphics.setColor(new Color (150,0,205));
+            graphics.drawLine(xEnd, 0, WIDTH, yEnd);
+
         }
-    }
-
-    public static void drawHexagon(int x, int y, int size, Graphics graphics){
-
-
-        int[] xPoly = {x, x+size, x+size+size/2, x+size,x, x-size/2};
-        int[] yPoly = {y,y,y+size/2,y+size,y+size,y+size/2};
-
-        graphics.drawPolygon(xPoly,yPoly,xPoly.length);
 
     }
-
 
 
 

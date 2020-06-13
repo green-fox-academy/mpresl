@@ -34,11 +34,11 @@ public class drawingNotes {
 
         //Drawing 10 triangles in a loop, each starts on i*15 position further
         graphics.setColor(myRandomColor);
-        for (int i = 0; i < 10; i++) {
-            int[] xPoly = {100+i*15,200+i*15,150+i*15};
-            int[] yPoly = {100+i*15,100+i*15,150+i*15};
-            graphics.drawPolygon(xPoly, yPoly, xPoly.length);
-        }
+//        for (int i = 0; i < 10; i++) {
+//            int[] xPoly = {100+i*15,200+i*15,150+i*15};
+//            int[] yPoly = {100+i*15,100+i*15,150+i*15};
+//            graphics.drawPolygon(xPoly, yPoly, xPoly.length);
+//        }
 
     }
 
@@ -66,30 +66,37 @@ public class drawingNotes {
         switch (random.nextInt(7)) {
             case 0:
                 graphics.drawRect(point.x, point.y, size, size);
+                System.out.println("case 0");
                 break;
             case 1:
                 graphics.fillRect(x, y, size, size);
+                System.out.println("case 1");
                 break;
             case 2:
                 graphics.drawOval(x, y, size, size + 25);
+                System.out.println("case 2");
                 break;
             case 3:
                 graphics.fillOval(x, y, size, size + 25);
+                System.out.println("case 3");
                 break;
             case 4:
                 int[] xPoly = {100, 200, 150};
                 int[] yPoly = {100, 100, 150};
                 graphics.drawPolygon(xPoly, yPoly, xPoly.length);
+                System.out.println("Case 4");
                 break;
             case 5:
                 int[] xPoly2 = {100, 200, 150};
                 int[] yPoly3 = {100, 100, 150};
                 graphics.fillPolygon(xPoly2, yPoly3, xPoly2.length);
+                System.out.println("case 5");
                 break;
             case 6:
                 graphics.drawLine(0, 0, WIDTH / 2, HEIGHT / 2);
                 graphics.setColor(myRandomColor);
                 graphics.drawLine(WIDTH / 2, HEIGHT / 2, WIDTH, HEIGHT);
+                System.out.println("Case 6");
                 break;
         }
         System.out.printf("Switch statement ends here");
