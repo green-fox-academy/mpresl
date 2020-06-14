@@ -21,9 +21,7 @@ public class LinePlayV2 {
 
             graphics.setColor(new Color (150,0,205));
             graphics.drawLine(xEnd, 0, WIDTH, yEnd);
-
         }
-
     }
 
 
