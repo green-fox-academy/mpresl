@@ -1,19 +1,13 @@
-//This is a work in progress... INCOMPLETE!!!
-
 package DrawingProject;
 
 import javax.swing.*;
-
-
 import java.awt.*;
-
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class TrianglesV2 {
     public static void mainDraw(Graphics graphics) {
         int side = 10;
         int pyramidHeight = 40;
-
         int startX = (WIDTH/2) - (side*pyramidHeight)/2;
         int startY = (HEIGHT/2) + (pyramidHeight*side)/2;
 
@@ -29,13 +23,10 @@ public class TrianglesV2 {
     }
 
     public static void drawTriangle(int x, int y, int side, Graphics graphics){
-
         int[] xPoly = {x, x+(side/2), x+side};
         int[] yPoly = {y, y-side, y};
         graphics.drawPolygon(xPoly, yPoly, xPoly.length);
     }
-
-
 
 
     // Don't touch the code below

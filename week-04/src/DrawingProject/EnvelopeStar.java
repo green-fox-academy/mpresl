@@ -2,7 +2,6 @@ package DrawingProject;
 
 import javax.swing.*;
 import java.awt.*;
-
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class EnvelopeStar {
@@ -17,10 +16,7 @@ public class EnvelopeStar {
             graphics.drawLine(newWidth, HEIGHT-i, newWidth-i, newWidth);    // bot left quadrant
             graphics.drawLine(newWidth, HEIGHT-i, newWidth+i, newWidth);    // bot right quadrant
         }
-
     }
-
-
 
 //         //First try-complicated code
 //
@@ -28,12 +24,8 @@ public class EnvelopeStar {
 //        drawBotLeft(0, HEIGHT/2, WIDTH/2, (HEIGHT/2), graphics);
 //        drawTopRight(WIDTH/2, 0, WIDTH/2, (HEIGHT/2), graphics);
 //        drawBotRight(WIDTH/2, HEIGHT, WIDTH/2, (HEIGHT/2), graphics);
-//
-//
-//
-//
-//
-//
+
+
 //    public static void drawBotLeft(int startX, int startY, int endX, int endY, Graphics graphics) {
 //        graphics.setColor(Color.GREEN);
 //        int plus = 10;
