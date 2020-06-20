@@ -12,13 +12,13 @@ public class EnvelopeStar {
 
         for (int i = 0; i < newWidth; i += step) {
             graphics.drawLine(newWidth, i, newWidth-i, newWidth);               // upper right quadrant
-            graphics.drawLine(newWidth,i, newWidth+i, newWidth);                // upper left quadrant
+            graphics.drawLine(newWidth, i, newWidth+i, newWidth);                // upper left quadrant
             graphics.drawLine(newWidth, HEIGHT-i, newWidth-i, newWidth);    // bot left quadrant
             graphics.drawLine(newWidth, HEIGHT-i, newWidth+i, newWidth);    // bot right quadrant
         }
     }
 
-//         //First try-complicated code
+//         //First try...complicated code
 //
 //        drawTopLeft(0, HEIGHT/2, WIDTH/2, (WIDTH/2), graphics);
 //        drawBotLeft(0, HEIGHT/2, WIDTH/2, (HEIGHT/2), graphics);
