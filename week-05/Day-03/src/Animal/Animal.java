@@ -24,20 +24,8 @@ public class Animal {
         System.out.println("playing...");
         System.out.println("Hunger = "+this.hunger+". Thirst = "+this.thirst);
     }
-
-
-    public static void main(String[] args){
-        Animal bird = new Animal();
-        bird.play();
-        Animal dog = new Animal();
-        bird.play();
-        bird.play();
-        bird.play();
-        dog.drink();
-        dog.drink();
-        dog.drink();
-        bird.drink();
-
-
+    @Override
+    public String toString() {
+        return "Doggo";
     }
 }
