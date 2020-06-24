@@ -6,6 +6,5 @@ public class MaximumFinder {
         if (nums.length <= 1){
             return nums;
         }
-        if (nums[0] == 0)
     }
 }
