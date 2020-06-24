@@ -35,6 +35,7 @@ public class Pirate {
             System.out.println(this.name+" is dead...");
         } else if(this.drunk <= 4){
             System.out.println("Pour me anudder!");
+            this.drunk ++;
         }else {
             System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its going?");
             System.out.println("Pirate Passes out to sleep it off...");

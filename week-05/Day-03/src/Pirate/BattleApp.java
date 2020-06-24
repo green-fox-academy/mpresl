@@ -20,6 +20,12 @@ public class BattleApp {
         }
         ship1.rollCall();
         ship2.rollCall();
+        mike.howsItGoingMate();
+        mike.howsItGoingMate();
+        mike.howsItGoingMate();
+        mike.howsItGoingMate();
+        mike.howsItGoingMate();
+        mike.howsItGoingMate();
 
     }
     }
