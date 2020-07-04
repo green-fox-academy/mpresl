@@ -1,19 +1,19 @@
 package main.java.music;
 
-public class StringedInstrument extends Instrument{
+public abstract class StringedInstrument extends Instrument{
     protected int numberOfStrings;
-    protected String sound;
 
 
-    StringedInstrument(int num, String sound){
+    StringedInstrument(int num){
         this.numberOfStrings = num;
-        this.sound = sound;
     }
+
+    public abstract String sound();
 
 
     @Override
     public void play() {
-        System.out.println(type+", a "+numberOfStrings+"-stringed instrument that goes "+sound);
+        System.out.println(type+", a "+numberOfStrings+"-stringed instrument that goes "+sound()+".");
 
     }
 }
