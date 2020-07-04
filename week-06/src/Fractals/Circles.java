@@ -1,3 +1,4 @@
+
 package Fractals;
 
 import javax.swing.*;
@@ -8,22 +9,37 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 public class Circles {
     public static void mainDraw(Graphics graphics){
 
-        drawCircle(HEIGHT/2, WIDTH/2, (HEIGHT/2)+150, graphics);
+        drawCircle(50, 50, HEIGHT-100, graphics, 5);
+
     }
 
-    public static void drawCircle(int x, int y, int radius, Graphics graphics){
-        graphics.drawOval(x-(radius/2),y-(radius/2),radius, radius);
-        if (radius > 20) {
+    public static void drawCircle(int x, int y, int diameter, Graphics graphics, int level){
+        if (level == 0) {
+            return;
+        }
+        graphics.drawOval(x,y,diameter, diameter);
 
-            drawCircle(x, y - radius/4, radius/2, graphics);
-//            drawCircle(x - radius/4, y, radius/2, graphics);
-//            drawCircle(x + radius/4, y, radius/2, graphics);
+        int xChange = (int) Math.round((diameter/2f) * Math.sqrt(3) / 2);
+        int yChange = Math.round((diameter/4f) * 3 / 2);
+
+        drawCircle(x + diameter / 4, y, diameter / 2, graphics, level - 1);
+        drawCircle(x+ diameter/4 + xChange/2, y + yChange, diameter/2, graphics, level -1); //right circles
+        drawCircle(x+ diameter/4 - xChange/2, y + yChange, diameter/2, graphics, level -1); //left circles
+
+
+
+
+        //width work with cosin and width/6 -
+
+            //height with sin
+
 
         }
-    }
 
-    static int WIDTH = 800;
-    static int HEIGHT = 800;
+
+
+    static int WIDTH = 600;
+    static int HEIGHT = 600;
 
 
     public static void main(String[] args) {
