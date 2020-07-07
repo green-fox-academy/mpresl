@@ -4,6 +4,6 @@ public interface Reservations {
     String getDowBooking();
     String getCodeBooking();
 
-    String dowBooking = new String();
-    String codeBooking = new String();
+    String dowBooking = "";
+    String codeBooking = "";
 }
