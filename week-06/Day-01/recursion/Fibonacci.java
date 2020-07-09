@@ -1,12 +1,15 @@
 public class Fibonacci {
     public static void main(String[] args) {
-        System.out.println(fibNum(0));
-        System.out.println(fibNum(1));
-        System.out.println(fibNum(2));
-        System.out.println(fibNum(3));
-        System.out.println(fibNum(4));
-        System.out.println(fibNum(5));
-        System.out.println(fibNum(6));
+//        System.out.println(fibNum(0));
+//        System.out.println(fibNum(1));
+//        System.out.println(fibNum(2));
+//        System.out.println(fibNum(3));
+//        System.out.println(fibNum(4));
+//        System.out.println(fibNum(5));
+
+        for (int i = 0; i < 11; i++) {
+            System.out.println(fibNum(i));
+        }
     }
     public static int fibNum(int num){
         if (num <= 0) {
