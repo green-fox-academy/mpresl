@@ -6,8 +6,8 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class TrianglesV2 {
     public static void mainDraw(Graphics graphics) {
-        int side = 10;
-        int pyramidHeight = 40;
+        int side = 20;
+        int pyramidHeight = 20;
         int startX = (WIDTH/2) - (side*pyramidHeight)/2;
         int startY = (HEIGHT/2) + (pyramidHeight*side)/2;
 
