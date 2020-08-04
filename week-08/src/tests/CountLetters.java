@@ -3,6 +3,11 @@ package tests;
 import java.util.HashMap;
 
 public class CountLetters {
+    public static void main(String[] args) {
+        HashMap<Character, Integer> letters = letterCount("asdkjakflakjksdsDG");
+        System.out.println(letters);
+    }
+
         String s;
 
     public static HashMap<Character, Integer> letterCount(String s){
