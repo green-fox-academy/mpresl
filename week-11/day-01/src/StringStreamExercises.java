@@ -27,7 +27,7 @@ public class StringStreamExercises {
         System.out.println("Exercise Eight");
         List<Character> charsList = new ArrayList<Character>();
         for (char c :
-                "Mike".toCharArray()) {
+                "Mike is awesome".toCharArray()) {
             charsList.add(c);
         }
         StringBuilder word = new StringBuilder();
@@ -43,6 +43,13 @@ public class StringStreamExercises {
                         .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(frequency);
 
-        //Exercise Ten
+//        Map<Character, Long> charFreq =
+        System.out.println(charsList.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
+
+//        System.out.println(charFreq);
+
+
+
     }
 }

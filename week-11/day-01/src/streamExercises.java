@@ -30,14 +30,23 @@ public class streamExercises {
         System.out.println("Exercise Four");
 
         List<Integer> nums4 = Arrays.asList(1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14);
+
+        double average = nums4.stream()
+                .filter(n -> n%2 != 0)
+                .mapToDouble(Integer::doubleValue)
+                .average()
+                .getAsDouble();
+        System.out.println(average);
+
+//long way
         Integer sum1 = nums4.stream()
                 .filter(n -> n % 2 != 0)
                 .reduce(0, Integer :: sum);
         long divisor = nums4.stream()
                 .filter(n -> n%2 != 0)
                 .count();
-        double average = (double)sum1/divisor;
-        System.out.println(average);
+        double average2 = (double)sum1/divisor;
+        System.out.println(average2);
 
         //Exercise Five
         System.out.println("Exercise Five");
