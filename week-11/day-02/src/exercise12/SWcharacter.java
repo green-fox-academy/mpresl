@@ -55,7 +55,7 @@ public class SWcharacter {
         this.gender = gender;
     }
 
-    public double setHeight() {
+    public double getHeight() {
         return height;
     }
 

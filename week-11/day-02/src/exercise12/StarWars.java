@@ -37,8 +37,24 @@ public class StarWars {
                 .filter(sw -> sw.getWeight() > 0)
                 .sorted(Comparator.comparingDouble((SWcharacter::getWeight)).reversed())
                 .collect(Collectors.toList());
-        System.out.println("The heaviest character is " + heaviestChars.get(0).getName());
 
+        SWcharacter heaviest = heaviestChars.get(0);
+        System.out.println("The heaviest character is " + heaviest.getName());
 
+        double averageMaleHeight = allChars.stream()
+                .filter(sw -> sw.getGender().equals("male"))
+                .filter(sw -> sw.getHeight() > 0)
+                .mapToDouble(SWcharacter::getHeight)
+                .average()
+                .getAsDouble();
+        System.out.println("The average Height of the males is " + averageMaleHeight);
+
+        double averageFemaleHeight = allChars.stream()
+                .filter(sw -> sw.getGender().equals("female"))
+                .filter(sw -> sw.getHeight() > 0)
+                .mapToDouble(SWcharacter::getHeight)
+                .average()
+                .getAsDouble();
+        System.out.println("The average Height of the males is " + averageFemaleHeight);
     }
 }
