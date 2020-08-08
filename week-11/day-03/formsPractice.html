@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=Form, initial-scale=1.0">
+  <title>Form Practice</title>
+</head>
+<body>
+
+  <div>
+  <form id="register" action="/" method="POST">
+  <label for="">Fullname: </label><input type="text" id="fullName" placeholder="Enter Full Name">
+</div>
+<div>
+  <label for="">
+  Email: 
+  <input type="email" id="email" placeholder="Enter Email" minlength="2" maxlength="25" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"> 
+</label>
+</div> 
+<div>
+  <label for="gender">Male:  </label>
+  <input type="checkbox" id="genderMale" value="genderMale">
+</div>
+<div>
+  <label for="gender">Female:  </label>
+  <input type="checkbox" id="genderFemale" value="genderFemale">
+</div>
+<div>
+  <label for="">Male</label>
+  <input type="radio" id="male" name="gender">
+</div>
+<div>
+  <label for="">Female</label>
+  <input type="radio" id="female" name="gender">
+</div>
+<div>
+  <label for="">Other</label>
+  <input type="radio" id="other" name="gender">
+</div>
+<div>
+  <input type="submit" value="Enter This Shit">
+</div>
+
+  </form>
+</body>
+</html>

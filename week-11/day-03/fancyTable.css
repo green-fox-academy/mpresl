@@ -1,0 +1,33 @@
+table {
+  margin: auto;
+  width: 800px;
+  border: 35px solid rgb(14, 157, 233);
+  font-size: xx-large;
+  font-family: 'Montserrat', sans-serif;
+  border-collapse: collapse;
+
+}
+th {
+  background-color: black;
+  text-align: left;
+  color: rgb(205, 205, 205);
+  font-weight: lighter;
+  padding: 4%;
+}
+
+th, td {
+  border: 2px solid gray;
+  border-collapse: collapse;
+}
+
+td{
+  font-weight: lighter;
+  font-size: 25px;
+  padding: 20px;
+}
+tr:nth-child(even){
+  background-color: #ffffff;
+}
+tr:nth-child(odd){
+  background-color: #ddd;
+}

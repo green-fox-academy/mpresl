@@ -55,6 +55,22 @@ public class StarWars {
                 .mapToDouble(SWcharacter::getHeight)
                 .average()
                 .getAsDouble();
-        System.out.println("The average Height of the males is " + averageFemaleHeight);
+// //Testing Method Reference Operator
+//        allChars.stream()
+//                .filter(sw -> sw.getGender().equals("female"))
+//                .filter(sw -> sw.getHeight() > 0)
+//                .mapToDouble(SWcharacter::getHeight)
+//                .average()
+//                .ifPresent(System.out::println);
+
+        System.out.println("The average Height of the females is " + averageFemaleHeight);
+
+        allChars.stream()
+                .filter(sw -> !sw.getGender().equals("male"))
+                .filter(sw -> !sw.getGender().equals("female"))
+                .forEach(sw-> System.out.println(sw.getName()));
+
+        Map
+
     }
 }
