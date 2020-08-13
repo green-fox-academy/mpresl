@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter submit</title>
+</head>
+<body>
+
+
+  <form id="post" action="https://newsletter-ws.herokuapp.com/signup" method="POST">
+  <div id="userName">
+    <label for="username">Name</label><br>
+  <input name="name" id="name" type="text" required=""><br>
+</div>
+
+<div id="email">
+  <label for="email">E-mail</label><br>
+  <input name= "email" type="email" id="email" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+</div>
+<div><input type="submit" value="Send"></div>
+  </form>
+
+
+
+</body>
+</html>

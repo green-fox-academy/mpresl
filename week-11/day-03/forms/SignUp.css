@@ -1,0 +1,27 @@
+.box {
+  height: 200px;
+  padding: 50px 0px;
+}
+#leftBox { 
+  float:left;  
+  background:rgb(255, 255, 255); 
+  width:40%; 
+} 
+#midBox{ 
+  float:left;  
+  background:#fff; 
+  width: 20%;; 
+} 
+#rightBox{ 
+  float:right; 
+  background: #ffffff;; 
+  width:40%; 
+}
+#mainForm {
+  margin-top: 75px;
+  margin: 150px;
+}
+
+body {
+  background-color: #dddddd;
+}

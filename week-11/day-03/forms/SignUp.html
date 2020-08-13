@@ -4,8 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
+  <link rel="stylesheet" href="SignUp.css">
 </head>
 <body>
+  <div id="mainForm">
+  <div id="leftBox" class="box">
+<form id="signup" action="https://newsletter-ws.herokuapp.com/signup" method="post">
+  <legend>Sign Up</legend>
+
+
+  <div id="userName" >
+  <input type="text" name="name" id="username" placeholder="Username"><br>
+  </div>
+  <div id="eMail">
+  <input type="email" name="email" id="email" placeholder="E-mail"><br>
+  </div>
+  <div id="passWord">
+  <input type="password" name="password" placeholder="Password"><br>
+  </div> 
+  <div id="passWordConfirmation">
+  <input type="password" name= "passwordConfirmation" placeholder="Retype Password"> <br>
+  </div> 
+  <input id="signUpButton" type="submit" value="SIGN ME UP">
+ </form>
+
+  </div>
+  <div id="midBox" class="box">
+  <h3>OR</h3>
+</div>
+  <div id="rightBox" class="box">
+    <div id="facebook">
+      <a class="button" href="www.facebook.com" id="fbButton">Sign In With Facebook</a>
+    </div>
+
+    <div id="google">
+<a class="button" href="www.google.com" id="googleButton">Sign In with Google</a>
+    </div>
+    
+    <div id="twitter">
+<a class="button" href="www.twitter.com">Sign In With Twitter</a>
+    </div>
+  </div>
+</div>
   
 </body>
 </html>
