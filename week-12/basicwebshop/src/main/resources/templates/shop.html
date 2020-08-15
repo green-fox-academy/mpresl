@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mikes WebShop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<header>
+<h1>Mike's Web Shop</h1>
+   <div>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: darkseagreen ;">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/only-available}"]>Only Available<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/cheapest-first}"]>Cheapest First</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/nikeSearch}"]>Contains Nike</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/averageStock}"]>Average Stock</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/mostExpensive}"]>Most Expensive</a>
+                </li>
+                <li>
+                    <form th:action="@{/search}" th:object="${terms}" th:method="POST" class="form-inline ml-auto">
+                        <div class="md-form my-0">
+                            <input name="terms" class="form-control mr-md-2" type="text" placeholder="Search Shop..." aria-label="Search">
+                            <input type="submit">
+                        </div>
+                    </form>
+                </li>
+
+            </ul>
+
+        </nav>
+   </div>
+</header>
+
+
+<div id="shopItems">
+    <table class="table table-hover">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity in Stock</th>
+        </tr>
+        <tr th:each="shopItem:${shopItems}">
+            <td th:text="${shopItem.getName()}"></td>
+            <td th:text="${shopItem.getDescription()}"></td>
+            <td th:text="'$'+ ${shopItem.getPrice()}"></td>
+            <td th:text="${shopItem.stock}"></td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>
