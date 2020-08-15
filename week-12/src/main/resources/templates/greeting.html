@@ -5,6 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="'Hello, ' + ${name} + '!'" />This site was loaded <p th:text ="${greetCount}"/><p>Times since last server reset </p>
+<!--<p th:text="'Hello, ' + ${name} + '!'" />This site was loaded <p th:text ="${greetCount}"/><p>Times since last server reset </p>-->
+<span th:text="'Hello, ' + ${name} + '!'" /> <span>This site was loaded</span> <span th:text ="${greetCount}"/> <span> Times since last server reset</span>
+<p></p>
+<span th:text="'Hello, ' + ${name} + '! This site was loaded'"/>  <span th:text ="${greetCount} + ' Times since last server reset' "/>
+<p></p>
+<span th:text="${greeting} +' '+ ${name} + '! This site was loaded ' + ${greetCount} +' Times since last server reset' "/>
 </body>
 </html>

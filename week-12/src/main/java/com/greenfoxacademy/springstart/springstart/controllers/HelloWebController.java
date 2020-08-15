@@ -1,5 +1,6 @@
 package com.greenfoxacademy.springstart.springstart.controllers;
 
+import com.greenfoxacademy.springstart.springstart.Greeting;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ public class HelloWebController {
 
         model.addAttribute("name", name);
         model.addAttribute("greetCount", greeting.getGreetCount());
+        model.addAttribute("greeting", greeting.getRandomGreeting());
         return "greeting";
     }
 }
