@@ -8,29 +8,22 @@
 </head>
 <body>
 <header>
-<h1>Mike's Web Shop</h1>
-   <div>
+    <div class="jumbotron">
+        <h1><a th:href="@{/}">Mike's Web Shop</a></h1>
+    </div>
+    <div>
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: darkseagreen ;">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/only-available}"]>Only Available<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/cheapest-first}"]>Cheapest First</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/nikeSearch}"]>Contains Nike</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/averageStock}"]>Average Stock</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/mostExpensive}"]>Most Expensive</a>
-                </li>
-                <li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/filtered?type=clothing}" ]>Clothing & Shoes</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/filtered?type=food}" ]>Food & Drink</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/filtered?type=electronics}" ]>Electronics</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/filtered?type=other}" ]>Other</a></li>
+
+
                     <form th:action="@{/search}" th:object="${terms}" th:method="POST" class="form-inline ml-auto">
                         <div class="md-form my-0">
-                            <input name="terms" class="form-control mr-md-2" type="text" placeholder="Search Shop..." aria-label="Search">
+                            <input name="terms" class="form-control mr-md-2" type="text" placeholder="Search Shop..."
+                                   aria-label="Search">
                             <input type="submit">
                         </div>
                     </form>
@@ -39,7 +32,30 @@
             </ul>
 
         </nav>
-   </div>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Original Filters
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="nav-link" th:href="@{/only-available}" ]>Only Available</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/cheapest-first}" ]>Cheapest First</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/nikeSearch}" ]>Contains Nike</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/averageStock}" ]>Average Stock</a></li>
+            <li class="nav-item"><a class="nav-link" th:href="@{/mostExpensive}" ]>Most Expensive</a></li>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" th:href="@{/price-in-czk}" ]>Get Prices In Czk</a>
+            <a class="dropdown-item" href="#">Original Currency</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
+
 </header>
 
 
@@ -61,4 +77,7 @@
     </table>
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>

@@ -44,39 +44,24 @@ public class webShopController {
         model.addAttribute("shopItems", shopItems.getMostExpensive());
         return "shop";
     }
-//@GetMapping("/only-available")
-//    public String onlyAvail(Model model) {
-//        model.addAttribute("availableItems", shopItems.getAvailableItems());
-//        return "onlyAvailable";
-//    }
-//
-//    @GetMapping("/cheapest-first")
-//    public String cheap(Model model) {
-//        model.addAttribute("cheapest", shopItems.getCheapestItems());
-//        return "cheapest";
-//    }
-//
-//    @GetMapping("/nikeSearch")
-//    public String nike(Model model) {
-//        model.addAttribute("nikeSearch", shopItems.searchNike());
-//        return "nikeSearch";
-//    }
-//
-//    @GetMapping("/averageStock")
-//    public String aveStock(Model model) {
-//        model.addAttribute("aveStock", shopItems.getAverageStock());
-//        return "averageStock";
-//    }
-//
-//    @GetMapping("/mostExpensive")
-//    public String expensive(Model model) {
-//        model.addAttribute("exp", shopItems.getMostExpensive());
-//        return "mostExpensive";
-//    }
+
+    @RequestMapping(value = "/filtered", method = RequestMethod.GET)
+    public String filteredItem(@RequestParam(value= "type", required = true) String type, Model model){
+        model.addAttribute("shopItems", shopItems.getAllType(type));
+        return "shop";
+    }
+
 
     @RequestMapping(value = "/search", method = RequestMethod.POST)
     public String searching(@RequestParam(value = "terms", required = false) String terms, Model model) {
         model.addAttribute("shopItems", shopItems.searchTerm(terms));
+        return "shop";
+    }
+
+    @GetMapping("/price-in-czk")
+    public String priceCzk(Model model){
+        model.addAttribute("shopItems", shopItems.getShopItems());
+        model.addAttribute("currency", "czk" );
         return "shop";
     }
 }

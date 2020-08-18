@@ -12,16 +12,22 @@ public class ShopItems {
 
     public ShopItems(){
         this.shopItems = new ArrayList<>();
-        shopItems.add(new Item("Running Shoes", "Nike Shoes for running", 130, 4));
-        shopItems.add(new Item("Printer", "An HP Printer that will print pages", 60, 2));
-        shopItems.add(new Item("Coca-Cola", "0.5L Standard cola drink", 1, 0));
-        shopItems.add(new Item("Wokin", "Chicken with fried rice and WOKIN sauce", 6, 100));
-        shopItems.add(new Item("T-Shirt", "Green New York Jets T-shirt", 20, 3));
+        shopItems.add(new Item("Running Shoes", "Nike Shoes for running", 130, 4, "clothing"));
+        shopItems.add(new Item("Printer", "An HP Printer that will print pages", 60, 2, "electronics"));
+        shopItems.add(new Item("Coca-Cola", "0.5L Standard cola drink", 1, 0, "food"));
+        shopItems.add(new Item("Wokin", "Chicken with fried rice and WOKIN sauce", 6, 100, "food"));
+        shopItems.add(new Item("T-Shirt", "Green New York Jets T-shirt", 20, 3, "clothing"));
 
     }
     public List<Item> getAvailableItems(){
         return shopItems.stream()
                 .filter(item -> item.getStock()>0)
+                .collect(Collectors.toList());
+    }
+
+    public List<Item> getAllType(String requestedT){
+        return shopItems.stream()
+                .filter(item -> item.getType().equalsIgnoreCase(requestedT))
                 .collect(Collectors.toList());
     }
 

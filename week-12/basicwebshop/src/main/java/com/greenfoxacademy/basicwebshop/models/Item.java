@@ -5,12 +5,28 @@ public class Item {
     private String description;
     private long price;
     private int stock;
+    private String type;
 
-    public Item(String name, String description, long price, int stock) {
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Item(String name, String description, long price, int stock, String type) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.stock = stock;
+        this.type = type;
+    }
+
+    public long priceInCzk(){
+        double czkPrice = this.price * 21.89;
+        long czk = (long) czkPrice;
+        return czk;
     }
 
     public String getName() {
