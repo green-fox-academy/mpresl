@@ -51,7 +51,7 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" th:href="@{/price-in-czk}" ]>Get Prices In Czk</a>
-            <a class="dropdown-item" href="#">Original Currency</a>
+            <a class="dropdown-item" th:href="@{/}">Original Currency</a>
             <a class="dropdown-item" href="#">Something else here</a>
         </div>
     </div>
@@ -70,7 +70,15 @@
         <tr th:each="shopItem:${shopItems}">
             <td th:text="${shopItem.getName()}"></td>
             <td th:text="${shopItem.getDescription()}"></td>
-            <td th:text="'$'+ ${shopItem.getPrice()}"></td>
+<!--            <td th:text="'$'+ ${shopItem.getPrice()}"></td>-->
+            <td>
+                <span th:if="${currency} != 'czk'">
+                    <span th:text="'$'+ ${shopItem.getPrice()}">
+                </span>
+                </span>
+            <span th:if="${currency} == 'czk'">
+                <span th:text="${shopItem.priceInCzk()} + ' Czk'"></span> </span></td>
+
             <td th:text="${shopItem.stock}"></td>
 
         </tr>
