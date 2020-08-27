@@ -38,4 +38,8 @@ public class UtilityService {
         }
         return result;
     }
+
+    public Boolean validateEmail(String email){
+        return email.contains("@") && email.contains(".");
+    }
 }

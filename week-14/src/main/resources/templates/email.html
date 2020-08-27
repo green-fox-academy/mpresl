@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Validator</title>
+</head>
+<body>
+<span th:if="${vld} == true" >
+    <span th:style="|color : green|" th:text="${email} + ' is valid'"></span>
+</span>
+<span th:if="${vld} == false" >
+    <span th:style="|color : red|" th:text="${email} + ' is not valid'"></span>
+</span>
+
+</body>
+</html>
