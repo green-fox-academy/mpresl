@@ -1,4 +1,4 @@
-package HelloDIproject;
+package com.greenfoxdemo.exercises.HelloDIproject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
