@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Name</title>
+</head>
+<body>
+<h2>Check for Student</h2>
+<form th:if="${checked} == false" th:action="@{/gfa/checkStudent}" th:method="POST">
+
+    <label>
+        Name:
+        <input type="text" name="name" required><br>
+    </label>
+
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+<span th:if="${checked} == true">
+    <span th:if="${nameCheck} == true">This Student Exists!</span>
+    <span th:if="${nameCheck} != true">This Student Does Not Exist...</span>
+
+</span>
+</body>
+</html>

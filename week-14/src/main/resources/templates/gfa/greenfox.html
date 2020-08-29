@@ -6,8 +6,11 @@
     <title>Green Fox</title>
 </head>
 <body>
+<h1>Current Students : <span th:text="${count}"></span></h1>
 <ul>
     <li> <a th:href="@{/gfa/list}"]>List Students</a></li>
+    <li> <a th:href="@{/gfa/addNew}"]>Add New Student</a></li>
+    <li> <a th:href="@{/gfa/check}"]>Check for Student</a></li>
 </ul>
 </body>
 </html>
