@@ -7,8 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ExerciseApplication{
-//        implements CommandLineRunner{
+public class ExerciseApplication {
+//    implements CommandLineRunner{
 //    private final TodoRepo todoRepo;
 //
 //    public ExerciseApplication(TodoRepo todoRepo){

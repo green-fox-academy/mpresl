@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Edit Task</h1>
+
+
+
+<form action="#" th:action="@{/edit}" th:object="${task}" method="post" class="form-inline">
+    <label>Task Id</label><input type="text" th:field="*{id}"></br>
+    <label>Task Description</label><input type="text" th:field="*{title}" /></br>
+    <label>Urgent</label><input type="checkbox" th:field="*{urgent}" /></br>
+    <label>Done</label><input type="checkbox" th:field="*{done}" /></br>
+    <input type="submit" value="Submit"><a th:href="@{/}">Cancel</a>
+
+</form>
+</body>
+</html>

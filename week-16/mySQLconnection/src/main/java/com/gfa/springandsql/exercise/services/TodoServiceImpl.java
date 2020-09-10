@@ -29,14 +29,24 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public List<Todo> getCompleteTasks() {
+    public Todo findTask(long id) {
+        return todoRepo.findById(id).get();
+    }
+
+    @Override
+    public List<Todo> getIncompleteTasks() {
         return todoRepo.findAll().stream()
-                .filter(todo -> todo.isDone())
+                .filter(todo -> !todo.isDone())
                 .collect(Collectors.toList());
     }
 
     @Override
     public void removeTask(Long id) {
         todoRepo.delete(todoRepo.findById(id).get());
+    }
+
+    @Override
+    public void update(Todo todo) {
+        todoRepo.save(todo);
     }
 }

@@ -8,6 +8,8 @@ import java.util.List;
 public interface TodoService {
     public List<Todo> getTasks();
     public void addTask(Todo todo);
-    public List<Todo> getCompleteTasks();
+    public Todo findTask(long id);
+    public List<Todo> getIncompleteTasks();
     public void removeTask(Long id);
+    public void update(Todo todo);
 }
