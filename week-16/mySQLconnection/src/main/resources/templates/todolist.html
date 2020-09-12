@@ -11,6 +11,13 @@
 <a th:href="@{/add}">Add New Task</a> </br>
 <a th:href="@{/list/?notDone=true}">Active Tasks</a> <br>
 <a th:href="@{/list/}">All Tasks</a>
+<form th:action="@{/search}" th:object="${terms}" th:method="POST" class="form-inline ml-auto">
+    <div class="md-form my-0">
+        <input name="terms" class="form-control mr-md-2" type="text" placeholder="Search todos..."
+               aria-label="Search">
+        <input type="submit">
+    </div>
+</form>
 
 <table class="table table-hover">
     <tr>

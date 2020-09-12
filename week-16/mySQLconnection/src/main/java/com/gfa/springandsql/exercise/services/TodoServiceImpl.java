@@ -49,4 +49,11 @@ public class TodoServiceImpl implements TodoService {
     public void update(Todo todo) {
         todoRepo.save(todo);
     }
+
+    @Override
+    public List<Todo> searchTasks(String terms) {
+        return todoRepo.findAll().stream()
+                .filter(task -> task.getTitle().toLowerCase().contains(terms.toLowerCase()))
+                .collect(Collectors.toList());
+    }
 }

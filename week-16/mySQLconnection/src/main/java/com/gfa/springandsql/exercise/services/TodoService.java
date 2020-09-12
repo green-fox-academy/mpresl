@@ -12,4 +12,5 @@ public interface TodoService {
     public List<Todo> getIncompleteTasks();
     public void removeTask(Long id);
     public void update(Todo todo);
+    public List<Todo> searchTasks(String terms);
 }

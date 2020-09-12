@@ -57,4 +57,10 @@ public class TodoController {
         todoService.update(todo);
         return "redirect:/list";
     }
+
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    public String searching(@RequestParam(value = "terms", required = false) String terms, Model model) {
+        model.addAttribute("todos", todoService.searchTasks(terms));
+        return "todolist";
+    }
 }
