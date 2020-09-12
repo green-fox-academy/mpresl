@@ -9,12 +9,15 @@ import java.util.stream.Collectors;
 
 
 @Repository
-public class FoxNameList {
+public class FoxRepo {
 
     private List<Fox> foxList;
 
-    public FoxNameList(){
+    private List<String> historyList;
+
+    public FoxRepo(){
         this.foxList = new ArrayList<>();
+        this.historyList = new ArrayList<>();
     }
 
     public void addFox(String name){
@@ -30,5 +33,13 @@ public class FoxNameList {
 
     public List<Fox> findAll(){
         return this.foxList.stream().collect(Collectors.toList());
+    }
+
+    public void addActHist(String action){
+        this.historyList.add(action);
+    }
+
+    public List<String> getHistoryList(){
+        return this.historyList;
     }
 }

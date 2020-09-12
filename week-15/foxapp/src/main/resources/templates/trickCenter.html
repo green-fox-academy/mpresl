@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Tricks</title>
 </head>
 <body>
-$END$
+<ul>
+    <li><a th:href="'/?name='+ ${fox.getName()}">Information</a></li>
+    <li><a th:href="'/nutritionStore?name=' +${fox.getName()}">Nutrition</a></li>
+    <li><a th:href="'/trickCenter?name=' + ${fox.getName()}">Trick Center</a> </li>
+    <li><a th:href="'/actionHistory?name=' + ${fox.getName()}">Action History</a> </li>
+
+</ul>
+<br>
+
+<img th:src="@{greenfox.png}"/>
+<p></p>
+<!--<form th:action="'/trickCenter?name=' + ${fox.getName()}" method="post">-->
+<!--    <label>Tricks</label>-->
+<!--    <select name = "trick">-->
+<!--        <option value="Type">Type</option>-->
+<!--        <option value="Jump">Jump</option>-->
+<!--        <option value="Spin">Spin</option>-->
+<!--    </select>-->
+
+<!--    <input type="submit" value="Change">-->
+<!--</form>-->
+<div th:if="${tricks.size()} == 0">
+    <h3>
+        Your fox knows everything already!</h3>
+</div>
+
+<div th:if="${tricks.size()} > 0">
+<form th:action="'/trickCenter?name=' + ${fox.getName()}" method="post">
+    <label>Tricks</label>
+    <select name = "trick">
+        <option th:each="trick : ${tricks}" th:value="${trick.getName()}" th:text="${trick.getName()}"></option>
+    </select>
+
+    <input type="submit" value="Change">
+</form>
+</div>
 </body>
 </html>

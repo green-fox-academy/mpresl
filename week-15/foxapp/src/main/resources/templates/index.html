@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Index</title>
 </head>
 <body>
-$END$
+<ul>
+    <li><a th:href="'/?name='+ ${fox.getName()}">Information</a></li>
+    <li><a th:href="'/nutritionStore?name=' +${fox.getName()}">Nutrition</a></li>
+    <li><a th:href="'/trickCenter?name=' + ${fox.getName()}">Trick Center</a> </li>
+    <li><a th:href="'/actionHistory?name=' + ${fox.getName()}">Action History</a> </li>
+</ul>
+<br>
+
+<img th:src="@{greenfox.png}"/>
+<p></p>
+<span th:text="'This is '+ ${fox.getName()} + '. Currently living on '+ ${fox.getFood()} + ' and '+ ${fox.getDrink()} +'. He knows '+ ${fox.getTricks().size()} +' Tricks.'"></span>
+
+<h2>Known Tricks</h2>
+<span th:if="${fox.getTricks().size() == 0}">
+    YOU DON'T KNOW ANY TRICKS YET!
+</span>
+
+<span th:if="${fox.getTricks().size() > 0}">
+<table class="table table-hover">
+    <tr th:each="trick:${tricks}">
+        <td th:text="${trick.getName()}"></td>
+
+    </tr>
+</table>
+    </span>
+
+
 </body>
 </html>

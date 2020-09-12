@@ -1,2 +1,5 @@
-package com.greenfox.lightning.lombokdemo.service;public interface BeingService {
+package com.greenfox.lightning.lombokdemo.service;
+
+public interface BeingService {
+
 }
