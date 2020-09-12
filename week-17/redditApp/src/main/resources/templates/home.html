@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Reddit App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Posts</h1>
+
+<a th:href="@{add}">Add New Post</a> </br>
+<!--<a th:href="@{/list/?notDone=true}">Active Tasks</a> <br>-->
+<!--<a th:href="@{/list/}">All Tasks</a>-->
+
+<table class="table table-hover">
+    <tr>
+        <th>Post Title</th>
+
+    </tr>
+    <tr th:each="post:${posts}">
+        <td> <a th:href="*{post.getUrl()}" th:text="${post.getTitle()}"></a></td>
+
+    </tr>
+</table>
+
+</body>
+</html>
