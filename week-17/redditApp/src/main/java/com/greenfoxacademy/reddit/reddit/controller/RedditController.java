@@ -4,10 +4,7 @@ import com.greenfoxacademy.reddit.reddit.model.Post;
 import com.greenfoxacademy.reddit.reddit.service.PostService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("post")
@@ -34,6 +31,20 @@ public class RedditController {
     @PostMapping("/add")
     public String addPost(@ModelAttribute Post post){
         postService.save(post);
+        return "redirect:/post/";
+    }
+
+    @GetMapping("/{id}/upvote")
+    public String changeVote(@PathVariable Long id, Model model){
+        postService.findById(id).changeVote(1);
+        postService.save(postService.findById(id));
+        return "redirect:/post/";
+    }
+
+    @GetMapping("/{id}/downvote")
+    public String downVote(@PathVariable Long id, Model model){
+        postService.findById(id).changeVote(-1);
+        postService.save(postService.findById(id));
         return "redirect:/post/";
     }
 

@@ -19,12 +19,16 @@ public class Post {
 
     private String title;
     private String url;
-    private Integer voteCount = 0;
+    private int voteCount;
 
 
     public Post(String title, String url){
         this.title = title;
         this.url = url;
+        this.voteCount = 0;
+    }
+    public void changeVote(int num){
+        this.voteCount += num;
     }
 
 

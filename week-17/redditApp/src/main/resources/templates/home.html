@@ -14,10 +14,14 @@
 
 <table class="table table-hover">
     <tr>
+        <th>Upvotes/Downvotes</th>
+        <th>Vote</th>
         <th>Post Title</th>
 
     </tr>
     <tr th:each="post:${posts}">
+        <td th:text="${post.getVoteCount()}"></td>
+        <td><a th:href="@{|${post.getId()}/upvote|}">+</a> <a th:href="@{|${post.getId()}/downvote|}">-</a> </td>
         <td> <a th:href="*{post.getUrl()}" th:text="${post.getTitle()}"></a></td>
 
     </tr>
