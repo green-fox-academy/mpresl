@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-$END$
+<h1>Todo List for Today:</h1>
+
+<a th:href="@{/add}">Add New Task</a> </br>
+<a th:href="@{/list/?notDone=true}">Active Tasks</a> <br>
+<a th:href="@{/list/}">All Tasks</a>
+<a th:href="@{/assignee/add}">Add Assignee</a><br>
+<form th:action="@{/search}" th:object="${terms}" th:method="POST" class="form-inline ml-auto">
+    <div class="md-form my-0">
+        <input name="terms" class="form-control mr-md-2" type="text" placeholder="Search todos..."
+               aria-label="Search">
+        <input type="submit">
+    </div>
+</form>
+
+<table class="table table-hover">
+    <tr>
+        <th>Assignee ID#</th>
+        <th>Assignee Name</th>
+        <th>Email</th>
+
+    </tr>
+    <tr th:each="user:${users}">
+        <td th:text="${user.getId()}"></td>
+        <td th:text="${user.getName()}"></td>
+        <td th:text="${user.getEmail()}"></td>
+
+<!--        <td> <a th:href="|/${todo.getId()}/delete|">Delete</a></td>-->
+<!--        <td> <a th:href="|/${todo.getId()}/edit|">Edit</a></td>-->
+
+
+    </tr>
+</table>
+
 </body>
 </html>

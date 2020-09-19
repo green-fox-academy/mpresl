@@ -1,6 +1,7 @@
 package com.gfa.springandsql.exercise.controllers;
 
 import com.gfa.springandsql.exercise.model.Todo;
+import com.gfa.springandsql.exercise.services.AssigneeServiceImpl;
 import com.gfa.springandsql.exercise.services.TodoServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
@@ -12,9 +13,11 @@ import org.springframework.web.bind.annotation.*;
 public class TodoController {
 
     private final TodoServiceImpl todoService;
+    private final AssigneeServiceImpl assigneeService;
 
-    public TodoController(TodoServiceImpl todoService){
+    public TodoController(TodoServiceImpl todoService, AssigneeServiceImpl assigneeService){
         this.todoService = todoService;
+        this.assigneeService = assigneeService;
     }
 
 

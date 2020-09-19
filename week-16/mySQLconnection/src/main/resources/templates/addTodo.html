@@ -9,7 +9,8 @@
 <h1>Add a New Todo</h1>
 <form action="/add" th:object="${title}" method="post" class="form-inline">
     <input name="title" class="form-control" input type="text"/>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit"><br>
+    <a th:href="@{/}">Cancel</a>
 </form>
 </body>
 </html>

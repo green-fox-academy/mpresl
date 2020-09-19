@@ -11,6 +11,8 @@
 <a th:href="@{/add}">Add New Task</a> </br>
 <a th:href="@{/list/?notDone=true}">Active Tasks</a> <br>
 <a th:href="@{/list/}">All Tasks</a>
+<a th:href="@{/assignee/add}">Add Assignee</a><br>
+
 <form th:action="@{/search}" th:object="${terms}" th:method="POST" class="form-inline ml-auto">
     <div class="md-form my-0">
         <input name="terms" class="form-control mr-md-2" type="text" placeholder="Search todos..."
@@ -23,12 +25,14 @@
     <tr>
         <th>Task ID#</th>
         <th>Description</th>
+        <th>Assignee</th>
         <th>Done</th>
         <th>Urgent</th>
     </tr>
     <tr th:each="todo:${todos}">
         <td th:text="${todo.getId()}"></td>
         <td th:text="${todo.getTitle()}"></td>
+        <td th:text="${todo.getAssignee()}"></td>
         <td th:text="${todo.isDone()}"></td>
         <td th:text="${todo.isUrgent()}"></td>
         <td> <a th:href="|/${todo.getId()}/delete|">Delete</a></td>

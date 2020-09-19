@@ -1,9 +1,7 @@
 package com.gfa.springandsql.exercise.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Todo {
@@ -15,6 +13,12 @@ public class Todo {
     private String title;
     private boolean urgent = false;
     private boolean done = false;
+    @Temporal(value = TemporalType.TIME)
+    private Date date;
+
+    @ManyToOne
+    @JoinColumn(name = "assignee_id")
+    private Assignee assignee;
 
     public Todo() {
     }
@@ -23,6 +27,23 @@ public class Todo {
         this.title = title;
         this.urgent = urgent;
         this.done = isDone;
+        this.date = date;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Assignee getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(Assignee assignee) {
+        this.assignee = assignee;
     }
 
     public Todo(String title) {
