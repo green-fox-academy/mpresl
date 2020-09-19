@@ -11,7 +11,7 @@
     <header th:replace="fragments/header :: header"></header>
 </div>
 <h1>Add Post</h1>
-<form action="#" th:action="@{/${username}/posts/create}" th:object="${post}" method="post" class="form-inline">
+<form action="#" th:action="@{|/${username}/posts/create|}" th:object="${post}" method="post" class="form-inline">
     <label>Title: </label><input name="title"  input type="text"/>
     <label>URL: </label><input name="url" input type="text"/>
     <input type="submit" value="Submit">

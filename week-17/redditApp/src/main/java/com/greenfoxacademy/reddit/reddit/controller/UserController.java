@@ -3,7 +3,6 @@ package com.greenfoxacademy.reddit.reddit.controller;
 import com.greenfoxacademy.reddit.reddit.model.User;
 import com.greenfoxacademy.reddit.reddit.service.PostServiceImpl;
 import com.greenfoxacademy.reddit.reddit.service.UserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

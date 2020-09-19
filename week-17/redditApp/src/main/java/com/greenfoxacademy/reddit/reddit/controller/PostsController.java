@@ -16,6 +16,7 @@ import java.util.Date;
 public class PostsController {
     @Autowired
     private PostService postService;
+    @Autowired
     private UserService userService;
 
     @GetMapping({"/", "/posts"})
@@ -41,16 +42,17 @@ public class PostsController {
     @GetMapping("/posts/create")
     public String create(Model model, @PathVariable("username") String username){
         model.addAttribute("post", new Post());
+        model.addAttribute("username", username);
         return "posts/createPost";
     }
 
 
     @PostMapping("/posts/create")
     public String addPost(@ModelAttribute Post post, @PathVariable("username") String username){
-//        User user = userService.findByName(username);
-//        if (user != null){
-//            post.setUser(user);
-//        }
+        User user = userService.findByName(username);
+        if (user != null){
+            post.setUser(user);
+        }
         post.setCreatedDate(new Date());
         postService.save(post);
         return "redirect:/" + username+ "/";
