@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reddit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+<header style="padding: 5px" th:fragment="header">
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/users/login}">Login</a>
+    <a th:href="@{/users/register}">Register</a>
+    <a th:href="@{posts/create}">Create Post</a>
+<!--    <a href="users/index.html" th:href="@{/users}">Users</a>-->
+    <div style="display: inline"> <span>Hello, <b>(user)</b></span>
+        <form style="display: inline-block" method="post" th:action="@{/users/logout}">
+            <input type="submit" value="Logout"/>
+        </form>
+    </div>
+
+
+</header>
+</body>
+
+</html>

@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Table(name = "posts")
@@ -17,19 +19,28 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+
     private String title;
+
     private String url;
     private int voteCount;
+
+    @Temporal(value = TemporalType.DATE)
+    private Date createdDate;
+
+    @ManyToOne
+    private User user;
+
 
 
     public Post(String title, String url){
         this.title = title;
         this.url = url;
-        this.voteCount = 0;
+        this.voteCount = 1;
     }
+
     public void changeVote(int num){
         this.voteCount += num;
     }
-
 
 }

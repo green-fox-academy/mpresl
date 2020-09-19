@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reddit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+<div class="container" align="center">
+    <h1>Reddit</h1>
+    <header th:replace="fragments/header :: header"></header>
+</div>
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>Title</th>
+            <th>Upvotes/Downvotes</th>
+            <th>Vote</th>
+            <th>URL</th>
+            <th>Created By</th>
+            <th>Date Created</th>
+
+        </tr>
+        <tr>
+            <td th:text="${post.getTitle()}"></td>
+            <td th:text="${post.getVoteCount()}"></td>
+            <td><a th:href="@{|${post.getId()}/upvote|}">+</a> <a th:href="@{|${post.getId()}/downvote|}">-</a> </td>
+            <td> <a th:href="*{post.getUrl()}" th:text="${post.getUrl()}"></a></td>
+            <td th:text="${post.getCreatedBy()}"> </td>
+            <td th:text="${post.getDate()}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

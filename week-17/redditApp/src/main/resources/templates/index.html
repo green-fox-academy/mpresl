@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reddit</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+<div class="container" align="center">
+    <h1>Welcome to Reddit</h1>
+    It is Currently: <b th:text="${#execInfo.now.time}"></b>
+
+    <header th:replace="fragments/header :: header"></header>
+</div>
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>Upvotes/Downvotes</th>
+            <th>Vote</th>
+            <th>Post Title</th>
+
+        </tr>
+        <tr th:each="post:${posts}">
+            <td th:text="${post.getVoteCount()}"></td>
+            <td><a th:href="@{|posts/${post.getId()}/upvote|}">+</a> <a th:href="@{|posts/${post.getId()}/downvote|}">-</a> </td>
+<!--            <td><a th:href="@{|/posts/${post.getId()}/upvote|}">+</a> <a th:href="@{|/posts/${post.getId()}/downvote|}">-</a> </td>-->
+            <td> <a th:href="*{post.getUrl()}" th:text="${post.getTitle()}"></a></td>
+
+        </tr>
+    </table>
+</div>
+
+
+</body>
+
+</html>
