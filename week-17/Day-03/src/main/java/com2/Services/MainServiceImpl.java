@@ -1,7 +1,11 @@
 package com2.Services;
 
+import com2.Models.ArrayInfo;
 import com2.Models.Result;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class MainServiceImpl implements MainService {
@@ -14,6 +18,36 @@ public class MainServiceImpl implements MainService {
             result = findFactor(until);
         }
         return new Result(result);
+    }
+
+    @Override
+    public long processArray(ArrayInfo arrayInfo) {
+        String funct = arrayInfo.getWhat();
+        long[] nums = arrayInfo.getNumbers();
+        long result = 0;
+        if (funct.equals("sum")){
+            for (long n :
+                    nums) {
+                result += n;
+            }
+        }else if(funct.equals("multiply")){
+            result = 1;
+            for (long n :
+                    nums) {
+                result *= n;
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public long[] doubleArray(ArrayInfo arrayInfo) {
+        long[] newnums = new long[arrayInfo.getNumbers().length];
+        long[] oldnums = arrayInfo.getNumbers();
+        for (int i = 0; i < arrayInfo.getNumbers().length; i++) {
+            newnums[i] = oldnums[i] * 2;
+        }
+        return newnums;
     }
 
     public long findSum(long until){
