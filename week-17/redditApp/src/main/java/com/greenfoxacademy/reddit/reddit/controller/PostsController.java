@@ -70,4 +70,13 @@ public class PostsController {
         postService.save(postService.findById(id));
         return "redirect:/" + username + "/";
     }
+
+    @GetMapping("/posts/update/{id}")
+    public String showUpdatePost(@PathVariable("id") long id, String username, Model model){
+        Post post = postService.findById(id);
+        model.addAttribute("post", post);
+        model.addAttribute("username", username);
+        model.addAttribute("users", userService.findAll());
+        return "posts/update_post";
+    }
 }

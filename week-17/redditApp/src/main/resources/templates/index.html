@@ -20,13 +20,16 @@
             <th>Upvotes/Downvotes</th>
             <th>Vote</th>
             <th>Post Title</th>
+            <th>Actions</th>
 
         </tr>
         <tr th:each="post:${posts}">
             <td th:text="${post.getVoteCount()}"></td>
             <td><a th:href="@{|posts/${post.getId()}/upvote|}">+</a> <a th:href="@{|posts/${post.getId()}/downvote|}">-</a> </td>
-<!--            <td><a th:href="@{|/posts/${post.getId()}/upvote|}">+</a> <a th:href="@{|/posts/${post.getId()}/downvote|}">-</a> </td>-->
             <td> <a th:href="*{post.getUrl()}" th:text="${post.getTitle()}"></a></td>
+            <td> <a th:href="@{posts/view/{id}(id=${post.id})}" class="btn btn-primary">View post</a>
+                <a th:href="@{posts/update/{id}(id=${post.id})}" class="btn btn-danger">Edit post</a>
+            </td>
 
         </tr>
     </table>

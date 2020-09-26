@@ -26,9 +26,9 @@
         <tr>
             <td th:text="${post.getTitle()}"></td>
             <td th:text="${post.getVoteCount()}"></td>
-            <td><a th:href="@{|${post.getId()}/upvote|}">+</a> <a th:href="@{|${post.getId()}/downvote|}">-</a> </td>
+            <td><a th:href="@{|posts/${post.getId()}/upvote|}">+</a> <a th:href="@{|posts/${post.getId()}/downvote|}">-</a> </td>
             <td> <a th:href="*{post.getUrl()}" th:text="${post.getUrl()}"></a></td>
-            <td th:text="${post.getUser().userName}"> </td>
+            <td th:text="${post.getUser().getUserName()}"> </td>
             <td th:text="${post.getCreatedDate()}"></td>
         </tr>
     </table>
