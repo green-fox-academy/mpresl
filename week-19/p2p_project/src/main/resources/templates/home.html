@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>P2P Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container my-2">
+    <h1> Chat </h1>
+    <p></p>
+<!--    <div th:if="${param.sameship}">-->
+<!--        <p>Already Using that Ship</p>-->
+<!--    </div>-->
+
+<!--    <table border="1" class="table table-striped table-responsive-md">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th> Planet </th>-->
+<!--            <th> Population </th>-->
+<!--            <th> Spaceship Location </th>-->
+<!--            <th> People On The Ship </th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="planet : ${planets}" >-->
+<!--            <td th:text="${planet.getName()}"></td>-->
+<!--            <td th:text="${planet.getPopulation()}"></td>-->
+<!--            <td> <span th:if="${planet.id} == ${ship.getPlanet().id}">-->
+<!--                <a th:href="@{|/toplanet/${planet.id}|}" class="btn btn-primary">To Planet</a>-->
+<!--                <a th:href="@{|/toship/${planet.id}|}" class="btn btn-danger">To Ship</a>-->
+<!--            </span>-->
+<!--                <span th:if="${planet.id} != ${ship.getPlanet().id}">-->
+<!--                    <form action="#" th:action="@{|/movehere/${planet.id}|}" method="post">-->
+<!--                    <button class="btn btn-success">Move Here</button>-->
+<!--                    </form>-->
+<!--                </span></td>-->
+
+<!--            <td> <span th:if="${planet.id} == ${ship.getPlanet().id}" th:text="${ship.getUtilization()}"></span>-->
+<!--                <span th:if="${planet.id} != ${ship.getPlanet().id}" th:text="'-'"></span></td>-->
+<!--        </tbody>-->
+<!--    </table>-->
+</div>
+
+</body>
+</html>
