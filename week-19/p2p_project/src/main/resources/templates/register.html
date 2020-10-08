@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container my-2">
+    <h1> P2P User Registration </h1>
+    <hr>
+    <h2> New User </h2>
+
+    <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+        <input type="text" th:field = "*{login}" placeholder="Username" class="form-control mb-4">
+        <input type="password" th:field = "*{password}" placeholder="Enter Password" class="form-control mb-4">
+        <button type="submit" class="btn btn-info col-2"> Register </button>
+    </form>
+</div>
+
+</body>
+</html>

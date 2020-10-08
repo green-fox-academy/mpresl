@@ -1,10 +1,10 @@
 package com.gfa.p2p.Model;
 
-public class User {
+public class RegisterResponse {
     private String username;
-    private String password;
+    private long userId;
 
-    public User() {
+    public RegisterResponse() {
     }
 
     public String getUsername() {
@@ -15,11 +15,11 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 }
