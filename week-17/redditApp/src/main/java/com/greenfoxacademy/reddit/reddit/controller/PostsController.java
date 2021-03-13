@@ -21,7 +21,14 @@ public class PostsController {
 
     @GetMapping({"/", "/posts"})
     public String logedinPosts(@PathVariable("username") String username, Model model){
-        model.addAttribute("posts", postService.findAll());
+        model.addAttribute("posts", postService.getAllByUpvotes());
+        model.addAttribute("user", username);
+        return "index";
+    }
+
+    @GetMapping("/posts/byUser/{id}")
+    public String showPostsFromUser(@PathVariable("id") long id, Model model, @PathVariable("username") String username){
+        model.addAttribute("posts", postService.findAllFromUserId(id));
         model.addAttribute("user", username);
         return "index";
     }

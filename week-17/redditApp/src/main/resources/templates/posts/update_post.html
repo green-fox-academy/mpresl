@@ -13,6 +13,8 @@
 <h1>Edit Post</h1>
 <form action="#" th:action="@{|/${username}/posts/create|}" th:object="${post}" method="post" class="form-inline">
     <input type="hidden" th:field="*{id}"/>
+    <input type="hidden" th:field="*{voteCount}"/>
+
 
     <input type="text" th:field = "*{title}" placeholder="Title" class="form-control mb-4">
 

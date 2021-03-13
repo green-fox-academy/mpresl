@@ -13,8 +13,8 @@
     <a th:href="@{/users/login}">Login</a>
     <a th:href="@{/users/register}">Register</a>
     <a th:href="@{posts/create}">Create Post</a>
-<!--    <a href="users/index.html" th:href="@{/users}">Users</a>-->
-    <div style="display: inline"> <span>Hello, <b>(user)</b></span>
+    <div style="display: inline"> <span th:text="'Hello '+${username}"></span> </b></span>
+<!--    <div style="display: inline"> <span>Hello, <b>(user)</b></span>-->
         <form style="display: inline-block" method="post" th:action="@{/users/logout}">
             <input type="submit" value="Logout"/>
         </form>

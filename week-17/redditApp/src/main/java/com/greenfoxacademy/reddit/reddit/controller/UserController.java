@@ -33,7 +33,7 @@ public class UserController {
     @GetMapping("/newUser")
     public String newuser(Model model){
         model.addAttribute("user", new User());
-        return "newUser";
+        return "users/login";
     }
 
     @PostMapping("/saveUser")
